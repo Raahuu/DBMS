@@ -1,0 +1,19 @@
+<!-- results.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="static/style.css">
+    <title>Plagiarism Detector Results</title>
+</head>
+<body>
+    <h1>Plagiarism Detector Results</h1>
+    <h2>Similarities:</h2>
+    <ul>
+        {% for similarity in similarities %}
+        <li>{{ similarity }}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

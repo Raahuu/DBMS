@@ -1,0 +1,33 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="static/style.css">
+    <title>Plagiarism Detector</title>
+</head>
+<body>
+    <h1>Plagiarism Detector</h1>
+    <form action="/add_document" method="POST">
+        <label for="title">Document Title:</label>
+        <input type="text" name="title" required>
+        <label for="content">Document Content:</label>
+        <textarea name="content" required></textarea>
+        <button type="submit">Add Document</button>
+    </form>
+
+    <h2>Check Plagiarism</h2>
+    <form action="/check_plagiarism" method="POST">
+        <textarea name="input_content" required></textarea>
+        <button type="submit">Check Plagiarism</button>
+    </form>
+
+    <h2>Available Documents</h2>
+    <ul>
+        {% for doc in documents %}
+        <li>{{ doc[1] }}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
